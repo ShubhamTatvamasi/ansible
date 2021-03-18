@@ -1,38 +1,18 @@
 # ansible
 
-start ansible vagrant boxes:
+test ansible connection:
 ```bash
-vagrant up
+ansible all -m ping
 ```
 
-check if servers are running:
+list all hosts:
 ```bash
-vagrant status
+ansible all --list-hosts
 ```
 
-ssh inside ansible server:
+gather facts from servers:
 ```bash
-vagrant ssh ansible_server_1
+ansible all -m gather_facts
+ansible all -m gather_facts --limit vagrant@172.28.128.3
 ```
-
-stop vagrant servers:
-```bash
-vagrant halt
-```
-
-delete vagrant boxes:
-```bash
-vagrant destroy -f
-```
-
-get all ssh config for boxes:
-```bash
-vagrant ssh-config
-```
-
-ssh to server:
-```bash
-ssh vagrant@localhost -p $(vagrant port ansible_server_1 --guest 22)
-```
-> this will work if you have added your own public key to the server
 
