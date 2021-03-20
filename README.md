@@ -30,3 +30,10 @@ ansible all -m apt -a upgrade=dist --become --ask-become-pass
 ```
 > password: `vagrant`
 
+
+---
+
+Start apache server on CentOS
+```bash
+sudo systemctl start httpd
+```

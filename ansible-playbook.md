@@ -9,3 +9,14 @@ Remove apache from ansible-playbook
 ```bash
 ansible-playbook --ask-become-pass remove_apache.yaml
 ```
+
+list all the tags on a playbook
+```bash
+ansible-playbook --list-tags site.yaml
+```
+
+only run tasks with `centos` tag:
+```bash
+ansible-playbook --tags centos --ask-become-pass site.yaml
+ansible-playbook --tags "centos,db" --ask-become-pass site.yaml
+```
