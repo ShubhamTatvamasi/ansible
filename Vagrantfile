@@ -27,7 +27,7 @@ Vagrant.configure("2") do |config|
   end
   
   config.vm.define "ansible_server_4", autostart: false do |ansible_server_4|
-    ansible_server_4.vm.box = "ubuntu/focal64"
+    ansible_server_4.vm.box = "centos/8"
     ansible_server_4.vm.box_check_update = false
     ansible_server_4.vm.hostname = "ansible-server-4"
     # ansible_server_4.vm.network "private_network", type: "dhcp"

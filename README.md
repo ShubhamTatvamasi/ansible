@@ -14,6 +14,7 @@ gather facts from servers:
 ```bash
 ansible all -m gather_facts
 ansible all -m gather_facts --limit vagrant@172.28.128.3
+ansible all -m gather_facts --limit vagrant@172.28.128.6 | grep ansible_distribution
 ```
 
 Install packages on server:
