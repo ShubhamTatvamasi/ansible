@@ -1,0 +1,5 @@
+- name: add ssh key for shubham
+  tags: always
+  authorized_key:
+    user: shubham
+    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMMdtY7/E73YRw/VORd1YnqVyQG8/Jfk/sK+HzW3Uv9c ansible"
