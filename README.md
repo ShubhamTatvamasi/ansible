@@ -36,3 +36,11 @@ Start apache server on CentOS
 ```bash
 sudo systemctl start httpd
 ```
+
+---
+
+generate key for ansible:
+```bash
+mkdir -p ~/.ssh/ansible/
+ssh-keygen -t ed25519 -N '' -C "ansible" -f ~/.ssh/ansible/id_ed25519
+```

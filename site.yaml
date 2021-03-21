@@ -4,19 +4,31 @@
   become: true
   pre_tasks:
 
-  - name: install updates (CentOS)
+  - name: update repo cache (CentOS)
     tags: always
     dnf:
-      update_only: yes
       update_cache: yes
+    changed_when: false
     when: ansible_distribution == "CentOS"
 
-  - name: install updates (Ubuntu)
+  - name: update repo cache (Ubuntu)
     tags: always
     apt:
-      upgrade: dist
       update_cache: yes
+    changed_when: false
     when: ansible_distribution == "Ubuntu"
+
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: add ssh key for shubham
+    tags: always
+    authorized_key:
+      user: shubham
+      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMMdtY7/E73YRw/VORd1YnqVyQG8/Jfk/sK+HzW3Uv9c ansible"
+
 
 - hosts: workstations
   become: true
@@ -91,6 +103,7 @@
       group: root
       mode: 0644
 
+
 - hosts: db_servers
   become: true
   tasks:
@@ -108,6 +121,7 @@
       name: mariadb-server
       state: latest
     when: ansible_distribution == "Ubuntu"
+
 
 - hosts: file_servers
   become: true

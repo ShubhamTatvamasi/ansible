@@ -20,3 +20,13 @@ only run tasks with `centos` tag:
 ansible-playbook --tags centos --ask-become-pass site.yaml
 ansible-playbook --tags "centos,db" --ask-become-pass site.yaml
 ```
+
+bootstrap your servers:
+```bash
+ansible-playbook --ask-become-pass bootstrap.yaml
+```
+
+run playbooks without password
+```bash
+ansible-playbook site.yaml
+```
