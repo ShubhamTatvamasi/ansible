@@ -1,5 +1,9 @@
 # ansible
 
+### Special Variables
+
+https://docs.ansible.com/ansible/latest/reference_appendices/special_variables.html
+
 test ansible connection:
 ```bash
 ansible all -m ping
