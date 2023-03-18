@@ -4,6 +4,11 @@
 
 https://docs.ansible.com/ansible/latest/reference_appendices/special_variables.html
 
+List all facts:
+```bash
+ansible -m setup localhost
+```
+
 test ansible connection:
 ```bash
 ansible all -m ping
