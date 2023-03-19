@@ -6,7 +6,7 @@ https://docs.ansible.com/ansible/latest/reference_appendices/special_variables.h
 
 List all facts:
 ```bash
-ansible -m setup localhost
+ansible localhost -m setup
 ```
 
 test ansible connection:
